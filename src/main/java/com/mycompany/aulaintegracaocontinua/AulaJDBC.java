@@ -61,7 +61,7 @@ public class AulaJDBC {
         }
     }
 
-    public ArrayList<Pessoa> carregarPessoas() throws FileNotFoundException {
+    public List<Pessoa> carregarPessoas() throws FileNotFoundException {
         List<Pessoa> pessoas = new ArrayList<>();
         String linha;
         FileReader fileReader = new FileReader("D:\\Estudos\\Treinamento\\pessoa.csv");
@@ -84,7 +84,7 @@ public class AulaJDBC {
             Logger.getLogger(AulaJDBC.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        return (ArrayList<Pessoa>) pessoas;
+        return pessoas;
     }
 
 }
