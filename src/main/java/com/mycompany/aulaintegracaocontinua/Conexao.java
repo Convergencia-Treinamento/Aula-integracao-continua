@@ -25,13 +25,13 @@ public class Conexao {
     private Conexao(){}
 
     public static Connection getConexao() {
+        Connection connection = null;
         try {
             Class.forName(DRIVER);
-            Connection connection = DriverManager.getConnection(URL, USUARIO, SENHA);
-            return connection;
+            connection = DriverManager.getConnection(URL, USUARIO, SENHA);
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(Conexao.class.getName()).log(Level.SEVERE, null, ex);
-            return null;
         }
+        return connection;
     }
 }
