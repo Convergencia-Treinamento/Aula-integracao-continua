@@ -31,6 +31,8 @@ public class AulaJDBC {
      * @param args the command line arguments
      * @throws java.sql.SQLException
      */
+    private AulaJDBC(){}
+    
     public static void main(String[] args) throws SQLException {
         AulaJDBC a = new AulaJDBC();
         try {

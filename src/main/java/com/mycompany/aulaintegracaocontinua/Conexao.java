@@ -25,16 +25,15 @@ public class Conexao {
     private static final String USUARIO = "postgres";
     private static final String URL = "jdbc:postgresql:treinamento";
     private static final String DRIVER = "org.postgresql.Driver";
+    
+    private Conexao(){}
 
     public static Connection getConexao() {
         try {
             Class.forName(DRIVER);
             Connection connection = DriverManager.getConnection(URL, USUARIO, SENHA);
             return connection;
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Conexao.class.getName()).log(Level.SEVERE, null, ex);
-            return null;
-        } catch (SQLException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(Conexao.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
