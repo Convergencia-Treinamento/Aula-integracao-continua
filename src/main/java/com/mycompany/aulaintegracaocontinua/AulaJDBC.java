@@ -29,6 +29,7 @@ public class AulaJDBC {
 
     /**
      * @param args the command line arguments
+     * @throws java.sql.SQLException
      */
     public static void main(String[] args) throws SQLException {
         AulaJDBC a = new AulaJDBC();
@@ -63,9 +64,10 @@ public class AulaJDBC {
     public ArrayList<Pessoa> carregarPessoas() throws FileNotFoundException {
         List<Pessoa> pessoas = new ArrayList<>();
         String linha;
-        FileReader fileReader = new FileReader("pessoa.csv");
+        FileReader fileReader = new FileReader("D:\\Estudos\\Treinamento\\pessoa.csv");
         try (BufferedReader br = new BufferedReader(fileReader)) {
-            br.readLine();
+            linha = br.readLine();
+            Logger.getLogger(linha);
             while ((linha = br.readLine()) != null) {
                 String[] cliente = linha.split("[|]");
 
